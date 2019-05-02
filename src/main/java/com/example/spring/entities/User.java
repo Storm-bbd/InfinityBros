@@ -15,15 +15,11 @@ public class User {
     @Column(name = "userId")
     private Integer userId;
     @Column(name = "email")
-    @Email(message = "Please provide a valid Email")
-    @NotEmpty(message = "Please provide an email")
     private String email;
     @Column(name = "password")
-    @Length(min = 6, message = "Your password must have at least 6 characters")
-    @NotEmpty(message = "Please provide your password")
     private String password;
     @Column(name = "active")
-    private Boolean isActive;
+    private Integer isActive = 0;
 
     public Integer getUserId() {
         return userId;
@@ -49,11 +45,11 @@ public class User {
         this.password = password;
     }
 
-    public Boolean getActive() {
+    public Integer getActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(Integer active) {
         isActive = active;
     }
 
