@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>sign up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/lib/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/lib/fontawesome/css/fontawesome.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<body style="background-color: #131516 ">
+<div th:replace="fragments/header.html :: header"></div>
+
+<div class="container" style="margin-bottom: 30px">
+
+    <div class="movie-card" th:each="movie : ${MCUMovies}">
+        <div>
+            <img th:src="${movie.moviePosterURL}" height="484px" width="324px">
+        </div>
+        <div class="card-footer bg-transparent card-footer-padding" >
+            <div class="movie-details">
+                <h6 th:text="${movie.movieName}"></h6>
+            </div>
+            <hr />
+            <div class="movie-details">
+
+                <div class="movie-icon">
+                    <a th:href="@{#} + ${movie.movieID}" data-toggle="modal">
+                        <i class="fa fa-film"></i><br/>
+                        <span>Trailer</span>
+                    </a>
+                </div>
+
+                <div class="movie-icon">
+                    <a href="#">
+                        <i class="fa fa-eye"></i><br/>
+                        <span>Watched</span>
+                    </a>
+                </div>
+
+                <div class="movie-icon">
+                    <a href="#">
+                        <i class="fa fa-heart"></i><br/>
+                        <span>Like</span>
+                    </a>
+                </div>
+
+                <div class="movie-icon">
+                    <a href="#">
+                        <i class="fa fa-plus-circle"></i><br/>
+                        <span>Watchlist</span>
+                    </a>
+                    <!--<a href="#"><i class="icon ion-ios-add-circle"></i></a>-->
+                </div>
+
+                <!--<a href="#" data-toggle="collapse" data-target="#one"><i class="fa fa-2x fa-calendar-plus-o"></i><br>One</a>-->
+                <!--<input type="checkbox"value="">-->
+
+                <div th:id="${movie.movieID}" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="width: max-content; margin: auto">
+                            <div class="modal-header">
+                                <button type="button" class="close my-model-txt" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title my-model-txt" th:text="${movie.movieName}"></h4>
+                            </div>
+                            <div class="modal-body" >
+                                <iframe width="560" height="315" th:src="${movie.movieTrailerURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/lib/jquery/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/lib/bootstrap/js/popper.min.js}"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+
+</body>
+</html>
