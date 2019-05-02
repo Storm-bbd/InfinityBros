@@ -30,6 +30,6 @@ public class LoginController {
 
     @RequestMapping(value = "/logout", method = POST)
     public void logout(){
-        
+     //perform a redirect to login page
     }
 }
