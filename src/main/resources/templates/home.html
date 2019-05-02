@@ -16,7 +16,7 @@
 <div class="container" style="margin-bottom: 30px">
 
     <div class="movie-card" th:each="movie : ${MCUMovies}">
-        <div>
+        <div th:userId="${movie.movieID} + -movie">
             <img th:src="${movie.moviePosterURL}" height="484px" width="324px">
         </div>
         <div class="card-footer bg-transparent card-footer-padding" >
@@ -58,7 +58,7 @@
                 <!--<a href="#" data-toggle="collapse" data-target="#one"><i class="fa fa-2x fa-calendar-plus-o"></i><br>One</a>-->
                 <!--<input type="checkbox"value="">-->
 
-                <div th:id="${movie.movieID}" class="modal fade">
+                <div th:userId="${movie.movieID}" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content" style="width: max-content; margin: auto">
                             <div class="modal-header">
@@ -80,6 +80,11 @@
 <script th:src="@{/lib/jquery/jquery-3.2.1.min.js}"></script>
 <script th:src="@{/lib/bootstrap/js/popper.min.js}"></script>
 <script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>
+<script>
+    function snap() {
+        console.log("----------------------------")
+    }
+</script>
 </body>
 
 </body>

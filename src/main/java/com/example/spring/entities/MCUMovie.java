@@ -3,7 +3,7 @@ package com.example.spring.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MCUMovie")
+@Table(name = "MCUMovies")
 public class MCUMovie {
 
     @Id

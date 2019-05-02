@@ -13,7 +13,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "userId")
-    private Integer id;
+    private Integer userId;
     @Column(name = "email")
     @Email(message = "Please provide a valid Email")
     @NotEmpty(message = "Please provide an email")
@@ -25,12 +25,12 @@ public class User {
     @Column(name = "active")
     private Boolean isActive;
 
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getEmail() {
@@ -60,7 +60,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "userId=" + userId +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", isActive=" + isActive +

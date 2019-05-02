@@ -34,21 +34,21 @@
                 </ul>
                 <br>
                 <div class="tab-content">
-                    <div id="home1" class="tab-pane fade active show">
+                    <div userId="home1" class="tab-pane fade active show">
                         <div class="movie-card" th:each="movie : ${WatchList}">
                             <div>
                                 <img th:src="${movie.moviePosterURL}" height="384px" width="224px">
                             </div>
                         </div>
                     </div>
-                    <div id="profile1" class="tab-pane fade">
+                    <div userId="profile1" class="tab-pane fade">
                         <div class="movie-card" th:each="movie : ${LikedMovies}">
                             <div>
                                 <img th:src="${movie.moviePosterURL}" height="384px" width="224px">
                             </div>
                         </div>
                     </div>
-                    <div id="messages1" class="tab-pane fade">
+                    <div userId="messages1" class="tab-pane fade">
                         <div class="movie-card" th:each="movie : ${WatchedMovies}">
                             <div>
                                 <img th:src="${movie.moviePosterURL}" height="384px" width="224px">
