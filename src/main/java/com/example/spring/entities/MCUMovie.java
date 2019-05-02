@@ -19,6 +19,10 @@ public class MCUMovie {
     @Column(name = "movieReleaseDate")
     private String movieReleaseDate;
 
+    public MCUMovie() {
+        super();
+    }
+
     public MCUMovie(String movieName, String moviePosterURL, String movieTrailerURL, String movieReleaseDate) {
        // this.movieID = movieID;
         this.movieName = movieName;

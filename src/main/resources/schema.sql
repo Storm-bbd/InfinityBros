@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS Users;
-CREATE TABLE Users (
-  userID INT(11) NOT NULL AUTO_INCREMENT,
-  email VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  active INT(1) NOT NULL
-);
+-- DROP TABLE IF EXISTS Users;
+-- CREATE TABLE Users (
+--   userID INT(11) NOT NULL AUTO_INCREMENT,
+--   email VARCHAR(255) NOT NULL,
+--   password VARCHAR(255) NOT NULL,
+--   active INT(1) NOT NULL
+-- );
 
 DROP TABLE IF EXISTS MCUMovies;
 CREATE TABLE MCUMovies (
@@ -14,3 +14,8 @@ CREATE TABLE MCUMovies (
   movieTrailerURL VARCHAR(255) NOT NULL,
   movieReleaseDate VARCHAR(255) NOT NULL
 );
+
+
+DROP TABLE IF EXISTS UserMovies;
+
+CREATE TABLE UserMovies AS SELECT MCUMovies.*, Users.email, Users.userID FROM MCUMovies LEFT OUTER JOIN Users;

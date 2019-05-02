@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/lib/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/lib/fontawesome/css/fontawesome.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" type="text/javascript" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js}"/>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
 <div class="container" style="margin-bottom: 30px">
 
     <div class="movie-card" th:each="movie : ${MCUMovies}">
-        <div th:userId="${movie.movieID} + -movie">
+        <div th:id="${movie.movieID} + -movie">
             <img th:src="${movie.moviePosterURL}" height="484px" width="324px">
         </div>
         <div class="card-footer bg-transparent card-footer-padding" >
@@ -58,7 +59,7 @@
                 <!--<a href="#" data-toggle="collapse" data-target="#one"><i class="fa fa-2x fa-calendar-plus-o"></i><br>One</a>-->
                 <!--<input type="checkbox"value="">-->
 
-                <div th:userId="${movie.movieID}" class="modal fade">
+                <div th:id="${movie.movieID}" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content" style="width: max-content; margin: auto">
                             <div class="modal-header">
@@ -80,10 +81,71 @@
 <script th:src="@{/lib/jquery/jquery-3.2.1.min.js}"></script>
 <script th:src="@{/lib/bootstrap/js/popper.min.js}"></script>
 <script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>
+<!--<script th:src="@{/lib/html2canvas.js}"></script>-->
 <script>
-    function snap() {
-        console.log("----------------------------")
-    }
+
+            $(document).ready(function(){
+                // console.log(document.getElementById("1-movie").parentElement);
+                // var element = document.getElementById("1-movie").parentElement;
+
+                    var span = true;
+                    if (span) {}
+                    $("#snap").click(function(){
+                        var arr = [];
+
+                        while(arr.length < 13){
+                            var r = Math.floor(Math.random()*23) + 1;
+                            if(arr.indexOf(r) === -1)
+                                arr.push(r);
+                        }
+
+                        var i = 0;
+                        while (i < arr.length) {
+                            let m = arr[i] + "-movie";
+                            console.log(m);
+                            let parent = document.getElementById(m).parentElement;
+                            console.log(parent);
+                            // $(parent).hide(2000);
+                            $( parent ).animate({
+                                width: [ "toggle", "swing" ],
+                                height: [ "toggle", "swing" ],
+                                opacity: "toggle"
+                            }, 10000, "linear", function() {
+                                $( this ).after( "<div>Animation complete.</div>" );
+                            });
+                            i++;
+                        }
+
+                        i = 0;
+
+                        // $("button").click(function(){
+                        //     location.reload(true);
+                        // });
+                        // while (i < arr.length) {
+                        //     let m = arr[i] + "-movie";
+                        //     console.log(m);
+                        //     let parent = document.getElementById(m).parentElement;
+                        //     console.log(parent);
+                        //     // $(parent).hide(2000);
+                        //     $( parent ).animate({
+                        //         opacity: "show"
+                        //     }, "slow", "easein" );
+                        //     i++;
+                        // }
+
+
+
+                });
+            });
+
+    // let hasClicked = false;
+    // document.body.addEventListener("click", () => {
+    //     if (hasClicked) { return; }
+    //     hasClicked = true;
+    // [...document.querySelectorAll(".item")].forEach(($elm, i) => {
+    //     setTimeout(() => disintegrate($elm), i * 250);
+    // });
+
 </script>
 </body>
 
