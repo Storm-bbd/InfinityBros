@@ -9,12 +9,12 @@ $(document).ready(function(){
     }
 
     $("#snap").click(function(){
-        var arr = [];
-        while (arr.length < 13) {
-            var r = Math.floor(Math.random() * 23) + 1;
-            if (arr.indexOf(r) === -1)
-                arr.push(r);
-        }
+        var arr = [9 , 1 ,17 ,23 ,22 ,16, 3 ,14 ,19 ,4 ,15 ,10];
+        // while (arr.length < 13) {
+        //     var r = Math.floor(Math.random() * 23) + 1;
+        //     if (arr.indexOf(r) === -1)
+        //         arr.push(r);
+        // }
         var i = 0;
         if (span) {
             document.getElementById("snap").src = "../img/thanos_snap.gif";
@@ -22,7 +22,7 @@ $(document).ready(function(){
                 let m = arr[i] + "-movie";
                 console.log(m);
                 let parent = document.getElementById(m).parentElement;
-                $(parent).fadeOut(7000);
+                $(parent).fadeTo(7000, 0.01);
                 i++;
             }
             span = false;
@@ -33,7 +33,7 @@ $(document).ready(function(){
                 console.log(m);
                 let parent = document.getElementById(m).parentElement;
                 console.log(parent);
-                $(parent).show(5000);
+                $(parent).fadeTo(7000, 1);
                 i++;
             }
             span = true;
