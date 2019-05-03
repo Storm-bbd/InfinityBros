@@ -17,6 +17,7 @@ public class LoginService {
 //        }finally {
 //            return res;
 //        }
+        return  res;
     }
 
     public User Login(String email, String password){
@@ -31,5 +32,6 @@ public class LoginService {
 //        }finally {
 //            return user;
 //        }
+        return user;
     }
 }

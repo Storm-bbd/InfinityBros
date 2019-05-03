@@ -3,6 +3,8 @@ package com.example.spring.controller;
 import com.example.spring.entities.MCUMovie;
 import com.example.spring.entities.User;
 import com.example.spring.entities.UserMovies;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 
@@ -20,7 +22,7 @@ public class ProfileController {
     }
 
 
-    @RequestMapping(value = "/movies-watched", method = POST)
+    @RequestMapping(value = "/movies-watched", method = RequestMethod.POST)
     public ArrayList<MCUMovie> getUnwatchedMovies(){
         ArrayList<MCUMovie> unwatchedMovies = new ArrayList<MCUMovie>();
         for(int i=0;i<this.userMovies.size();i++){
@@ -34,7 +36,7 @@ public class ProfileController {
         return unwatchedMovies;
     }
 
-    @RequestMapping(value = "/movies-watched", method = POST)
+    @RequestMapping(value = "/movies-watched", method = RequestMethod.POST)
     public ArrayList<MCUMovie> getWatchedMovies(){
         ArrayList<MCUMovie> watchedMovies = new ArrayList<MCUMovie>();
         for(int i=0;i<this.userMovies.size();i++){
