@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>sign up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/lib/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/lib/fontawesome/css/fontawesome.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<body style="background-color: #131516">
+<div th:replace="fragments/header.html :: header"></div>
+
+<div class="container" style="margin-bottom: 30px;">
+        <div class="d-flex justify-content-center">
+            <div class="image_outer_container">
+                <div class="image_inner_container">
+                    <img src="/img/Thanos.jpg" width="60px" height="60px"/>
+                </div>
+                <p>Mad Titan</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs" >
+                    <li class="nav-item" ><a href="" data-target="#home1" data-toggle="tab" class="nav-link small text-uppercase active">Watch List</a></li>
+                    <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link small text-uppercase">Favourites</a></li>
+                    <li class="nav-item"><a href="" data-target="#messages1" data-toggle="tab" class="nav-link small text-uppercase">Watched Movies</a></li>
+                </ul>
+                <br>
+                <div class="tab-content">
+                    <div id="home1" class="tab-pane fade active show">
+                        <div class="movie-card" th:each="movie : ${WatchList}">
+                            <div>
+                                <img th:src="${movie.moviePosterURL}" height="384px" width="224px">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profile1" class="tab-pane fade">
+                        <div class="movie-card" th:each="movie : ${LikedMovies}">
+                            <div>
+                                <img th:src="${movie.moviePosterURL}" height="384px" width="224px">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="messages1" class="tab-pane fade">
+                        <div class="movie-card" th:each="movie : ${WatchedMovies}">
+                            <div>
+                                <img th:src="${movie.moviePosterURL}" height="384px" width="224px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+
+<script th:src="@{/lib/jquery/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/lib/bootstrap/js/popper.min.js}"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+
+</body>
+</html>
