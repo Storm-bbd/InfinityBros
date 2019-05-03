@@ -9,7 +9,7 @@ $(document).ready(function(){
     }
 
     $("#snap").click(function(){
-        var arr = [9 ,23 ,22 ,16,14 ,19 ,4 ,18 ,15 ,10];
+        var arr = [1 ,3 , 23 ,5, 9 ,19 ,4 ,18 ,15 ,10];
         var i = 0;
         if (span) {
             document.getElementById("snap").src = "../img/thanos_snap.gif";
