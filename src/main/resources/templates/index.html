@@ -14,20 +14,22 @@
 
 <div class="page-container">
     <div class="form-container">
-        <form class="login-form" th:action="@{/user}" th:object="${user}" method="post">
+        <form class="login-form" th:action="@{/home}" th:object="${user}" method="post">
                 <img class="img-responsive logo" src="/img/logo.jpeg" />
 				<span class="login-form-title">
 					Sign In
 				</span>
 <!---->
-            <input type="email" placeholder="Enter email" required="true">
+            <input type="email" placeholder="Enter email" required="true" th:value ="${email}">
 <!---->
-            <input type="password"  placeholder="Enter password"  required="true">
+            <input type="password"  placeholder="Enter password"  required="true" th:value ="${password}" >
 <!---->
             <div class="container-btn">
-                <button class="login-form-btn">
+                <form th:action="${signin}">
+                <button class="login-form-btn" >
                     Sign In
                 </button>
+                </form>
             </div>
 <!---->
             <div class="text-center">

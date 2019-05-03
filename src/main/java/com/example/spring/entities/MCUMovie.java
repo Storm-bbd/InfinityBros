@@ -23,8 +23,8 @@ public class MCUMovie {
         super();
     }
 
-    public MCUMovie(String movieName, String moviePosterURL, String movieTrailerURL, String movieReleaseDate) {
-       // this.movieID = movieID;
+    public MCUMovie(String movieID, String movieName, String moviePosterURL, String movieTrailerURL, String movieReleaseDate) {
+        this.movieID = Integer.parseInt(movieID);
         this.movieName = movieName;
         this.moviePosterURL = moviePosterURL;
         this.movieTrailerURL = movieTrailerURL;
