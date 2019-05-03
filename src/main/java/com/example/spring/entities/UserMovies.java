@@ -9,13 +9,15 @@ public class UserMovies {
     String title;
     String email;
     boolean checked;
+    boolean liked;
 
-    public UserMovies(int movie_id,int user_id,String title,String email, boolean checked){
+    public UserMovies(int movie_id,int user_id,String title,String email, boolean checked,boolean liked){
         this.movie_id = movie_id;
         this.user_id=user_id;
         this.title = title;
         this.email=email;
         this.checked = checked;
+        this.liked=liked;
     }
 
     public String getTitle() {
@@ -40,5 +42,13 @@ public class UserMovies {
 
     public void setChecked(boolean checked) {
         this.checked = checked;
+    }
+
+    public boolean isLiked() {
+        return liked;
+    }
+
+    public void setLiked(boolean liked) {
+        this.liked = liked;
     }
 }

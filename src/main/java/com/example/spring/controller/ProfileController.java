@@ -40,14 +40,28 @@ public class ProfileController {
     public ArrayList<MCUMovie> getWatchedMovies(){
         ArrayList<MCUMovie> watchedMovies = new ArrayList<MCUMovie>();
         for(int i=0;i<this.userMovies.size();i++){
-              if (this.userMovies.get(i).isChecked()){
-                  int index = getIndexOf(this.userMovies.get(i).getTitle());
-                  if (index>-1){
-                      watchedMovies.add(movies.get(index));
-                  }
-              }
+            if (this.userMovies.get(i).isChecked()){
+                int index = getIndexOf(this.userMovies.get(i).getTitle());
+                if (index>-1){
+                    watchedMovies.add(movies.get(index));
+                }
+            }
         }
         return watchedMovies;
+    }
+
+    @RequestMapping(value = "/movies-liked", method = RequestMethod.POST)
+    public ArrayList<MCUMovie> getLikedMovies(){
+        ArrayList<MCUMovie> likedMovies = new ArrayList<MCUMovie>();
+        for(int i=0;i<this.userMovies.size();i++){
+            if (this.userMovies.get(i).isLiked()){
+                int index = getIndexOf(this.userMovies.get(i).getTitle());
+                if (index>-1){
+                    likedMovies.add(movies.get(index));
+                }
+            }
+        }
+        return likedMovies;
     }
 
     private int getIndexOf(String title){
