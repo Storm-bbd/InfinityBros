@@ -24,7 +24,6 @@ public class MCUMovie {
     }
 
     public MCUMovie(String movieName, String moviePosterURL, String movieTrailerURL, String movieReleaseDate) {
-       // this.movieID = movieID;
         this.movieName = movieName;
         this.moviePosterURL = moviePosterURL;
         this.movieTrailerURL = movieTrailerURL;

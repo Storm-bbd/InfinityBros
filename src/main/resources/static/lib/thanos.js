@@ -9,12 +9,7 @@ $(document).ready(function(){
     }
 
     $("#snap").click(function(){
-        var arr = [9 , 1 ,17 ,23 ,22 ,16, 3 ,14 ,19 ,4 ,15 ,10];
-        // while (arr.length < 13) {
-        //     var r = Math.floor(Math.random() * 23) + 1;
-        //     if (arr.indexOf(r) === -1)
-        //         arr.push(r);
-        // }
+        var arr = [9 ,23 ,22 ,16,14 ,19 ,4 ,18 ,15 ,10];
         var i = 0;
         if (span) {
             document.getElementById("snap").src = "../img/thanos_snap.gif";

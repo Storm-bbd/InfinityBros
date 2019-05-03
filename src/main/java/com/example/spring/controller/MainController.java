@@ -99,7 +99,7 @@ public class MainController {
     }
 
 
-    public void initialize() {
+    private void initialize() {
         List<MCUMovie> list = new ArrayList<>();
         list.add(new MCUMovie("Iron Man", "/img/movies/Iron_Man.jpg", "https://www.youtube.com/embed/bK_Y5LjSJ-Y", "/img/calendar/1.png"));
         list.add(new MCUMovie("The Incredible Hulk", "/img/movies/The-Incredible-Hulk.jpg", "https://www.youtube.com/embed/xbqNb2PFKKA", "/img/calendar/2.png"));
